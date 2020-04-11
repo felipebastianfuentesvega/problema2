@@ -1,0 +1,15 @@
+{% extends 'registromultas/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if multasestacionamiento.id %}
+            <div class="date">
+                {{ multasestacionamiento.id }}
+            </div>
+        {% endif %}
+        <h2>{{ multasestacionamiento.patente }}</h2>
+        <h2>{{ multasestacionamiento.fechayhora }}</h2>
+        <h2>{{ multasestacionamiento.lugar }}</h2>
+        <p>{{ multasestacionamiento.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'registromultas/base.html' %}
+
+{% block content %}
+    {% for multasestacionamiento in multasestacionamientos %}
+        <div class="post">
+            <div class="date">
+                <p> Patente: {{ multasestacionamiento.patente }}</p>
+                <p> Fecha y hora: {{ multasestacionamiento.fechayhora }}</p>
+            </div>
+            <h2><p> Id multa: </p><a href="{% url 'multasestacionamiento_detail' pk=multasestacionamiento.pk %}">{{ multasestacionamiento.id }}</a></h2>
+            <p>{{ multasestacionamiento.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
